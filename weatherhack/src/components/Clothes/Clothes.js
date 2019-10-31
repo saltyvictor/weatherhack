@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 
 
 const Clothes = ({temperature}) => {
-  // later add JSON file to PROPS?
   const [comfortableClothes] = useState(comfortAlgorithm(temperature))
 
   return (

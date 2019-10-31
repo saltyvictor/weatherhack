@@ -6,11 +6,11 @@ import Weather from './components/Weather/Weather'
 
 function App() {
   return (
-    <div className="App">
-      <Container className="container" maxWidth="sm">
-        <Weather/>
-      </Container>
-    </div>
+    <Container className="container" maxWidth="sm">
+      <h2>WeaRther app</h2>
+      <Weather/>
+    </Container>
+    
   );
   // sending Weather in without props 
 }
