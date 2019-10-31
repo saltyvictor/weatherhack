@@ -34,8 +34,9 @@ const CurrentTemperature = () => {
   //<p> The weather in Stockholm is {} celsius</p>
 
   return (
-    <Container className="weather">
-      <p>WEATHER COMPONENT RENDERING: {temperatureProp ? <Clothes temperature={temperatureProp}/> : 'dasdas'}</p>
+    <Container className="container">
+      <h1>The temperature in Stockholm is currently: {temperatureProp} celsius</h1>
+      {temperatureProp ? <Clothes temperature={temperatureProp}/> : 'Waiting for temperature data'}
     </Container>
   )
 }

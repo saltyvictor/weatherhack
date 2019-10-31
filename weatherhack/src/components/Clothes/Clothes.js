@@ -10,8 +10,8 @@ const Clothes = ({temperature}) => {
   const [comfortableClothes] = useState(comfortAlgorithm(temperature))
 
   return (
-    <Card className="clothing">
-      <p>CLOTHES COMPONENT RENDERING</p>
+    <Card className="card">
+      <h3>The comfort algorithm suggests that you wear: </h3>
       <p className="clothing-article">{comfortableClothes}</p>
     </Card>
   )
