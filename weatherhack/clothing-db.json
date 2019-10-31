@@ -1,0 +1,96 @@
+{
+  "jackets": [
+    {
+      "id": "denim jacket",
+      "weather": "sun",
+      "temperature": {
+        "high": 20,
+        "low": 15
+      }
+    },
+    {
+      "id": "carhartt jacket",
+      "weather": ["sun", "rain"],
+      "temperature": {
+        "high": 16,
+        "low": 10
+      }
+    },
+    {
+      "id": "bane jacket",
+      "weather": ["sun", "snow"],
+      "temperature": {
+        "high": 0,
+        "low": -15
+      }
+    },
+    {
+      "id": "grey coat",
+      "weather": ["sun", "snow"],
+      "temperature": {
+        "high": 5,
+        "low": -12
+      }
+    }
+  ],
+  "sweaters": [
+    {
+      "id": "cotton shirt",
+      "weather": "sun",
+      "temperature": {
+        "high": 20,
+        "low": 15
+      }
+    },
+    {
+      "id": "college sweater",
+      "weather": ["sun"],
+      "temperature": {
+        "high": 16,
+        "low": 10
+      }
+    },
+    {
+      "id": "knitted sweater",
+      "weather": ["sun", "snow"],
+      "temperature": {
+        "high": 14,
+        "low": -15
+      }
+    },
+    {
+      "id": "wool shirt",
+      "weather": ["sun", "snow"],
+      "temperature": {
+        "high": 10,
+        "low": -12
+      }
+    }
+  ],
+  "pants": [
+    {
+      "id": "cotton pants",
+      "weather": "sun",
+      "temperature": {
+        "high": 24,
+        "low": 15
+      }
+    },
+    {
+      "id": "jeans",
+      "weather": ["sun", "rain", "snow"],
+      "temperature": {
+        "high": 20,
+        "low": 10
+      }
+    },
+    {
+      "id": "wool pants",
+      "weather": ["sun", "snow"],
+      "temperature": {
+        "high": 14,
+        "low": -10
+      }
+    }
+  ]
+}
