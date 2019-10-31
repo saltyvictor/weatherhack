@@ -36,12 +36,14 @@ const jacketsJSON = {"jackets": [
 
 // Returns an array of the clothing articles that are within temperature range 
 // needs refactoring (helper functions) and changes for clothing types other than jackets
-const comfortAlgorithm = (jsonClothingObj, currentTemperature) => {
-  const comfortCheck = jsonClothingObj.jackets.filter(article => {
+const comfortAlgorithm = (currentTemperature) => {
+  const comfortCheck = jacketsJSON.jackets.filter(article => {
     const hiTemp = article.temperature.high
     const lowTemp = article.temperature.low
     return (hiTemp >= currentTemperature && currentTemperature >= lowTemp)
   })
   const comfortMatch = comfortCheck.map(article => article.id)
-  return comfortMatch
+  return comfortMatch.join()
 }
+
+export default comfortAlgorithm
