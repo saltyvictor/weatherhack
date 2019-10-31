@@ -19,7 +19,7 @@ const jacketsJSON = {"jackets": [
     "id": "bane jacket",
     "weather": ["sun", "snow"],
     "temperature": {
-      "high": "0",
+      "high": "5",
       "low": "-15"
     }
   },
