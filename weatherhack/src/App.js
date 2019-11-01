@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Container from '@material-ui/core/Container';
-import Weather from './components/Weather/Weather'
+import Weather from './components/Weather'
 
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
     </Container>
     
   );
-  // sending Weather in without props 
 }
 
 export default App;

@@ -4,7 +4,7 @@ const clothingJSON = {
       "id": "denim jacket",
       "weather": "sun",
       "temperature": {
-        "high": "20",
+        "high": "25",
         "low": "15"
       }
     },
@@ -72,7 +72,7 @@ const clothingJSON = {
       "id": "cotton pants",
       "weather": "sun",
       "temperature": {
-        "high": "24",
+        "high": "25",
         "low": "15"
       }
     },
@@ -95,42 +95,36 @@ const clothingJSON = {
   ]
 }
 
-
-// Returns an array of the clothing articles that are within temperature range 
-// needs refactoring (helper functions) and changes for clothing types other than jackets
 const comfortAlgorithm = (currentTemperature) => {
-  const resultJackets = comfortCheck(clothingJSON.jackets, currentTemperature)
-  const resultSweaters = comfortCheck(clothingJSON.sweaters, currentTemperature)
-  const resultPants = comfortCheck(clothingJSON.pants, currentTemperature)
-  console.log(resultJackets)
-  const jacketIds = comfortIDcheck(resultJackets)
-  const sweaterIds = comfortIDcheck(resultSweaters)
-  const pantsIds = comfortIDcheck(resultPants)
-  console.log(sweaterIds)
-
-  const comfortAlgorithmResult = 
-  `Upper body: ${sanitizeStrings(jacketIds)} and a ${sanitizeStrings(sweaterIds)} 
-  Lower body: ${sanitizeStrings(pantsIds)}`
-  console.log(comfortAlgorithmResult)
+  const matchingJackets = temperatureComfortCheck(clothingJSON.jackets, currentTemperature)
+  const matchingSweaters = temperatureComfortCheck(clothingJSON.sweaters, currentTemperature)
+  const matchingPants = temperatureComfortCheck(clothingJSON.pants, currentTemperature)
+  
+  let comfortAlgorithmResult = []
+  comfortAlgorithmResult.push(sanitizeStrings(matchingJackets))
+  comfortAlgorithmResult.push(sanitizeStrings(matchingSweaters))
+  comfortAlgorithmResult.push(sanitizeStrings(matchingPants))
+ 
   return comfortAlgorithmResult
 }
 
+const clothingIDcheck = (array) => array.map(item => item.id)
 
-
-const comfortIDcheck = (array) => array.map(item => item.id)
-
-const comfortCheck = (clothingObj, temperature) => {
+const temperatureComfortCheck = (clothingObj, temperature) => {
   const result = clothingObj.filter(article => {
     const hiTemp = article.temperature.high
     const lowTemp = article.temperature.low
     return (hiTemp >= temperature && temperature >= lowTemp)
-})
- return result
+  })
+  return clothingIDcheck(result)
 }
 
 const sanitizeStrings = (array) => {
   const result = array.map(string => capitalize(string))
-  return result.join(' or ')
+  if (result.length > 1) {
+    return result.join(' or ')
+  }
+  return result
 }
 const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);

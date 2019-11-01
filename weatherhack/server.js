@@ -50,4 +50,10 @@ app.get('/stockholm', (__req, res) => {
   //   .catch(err => console.log(err))
 })
 
+app.get('/:lat/:long', (req, res) => {
+  console.log('here')
+  console.log(req.params.lat)
+  console.log(req.params.long)
+})
+
 app.listen(port, () => console.log('Server listening on port ' + port))
