@@ -3,7 +3,6 @@ import comfortAlgorithm from '../comfortAlgorithm'
 import Card from '@material-ui/core/Card'
 import PropTypes from 'prop-types'
 
-
 const Clothes = ({temperature}) => {
 
   let [comfortableClothes] = useState(comfortAlgorithm(temperature))
